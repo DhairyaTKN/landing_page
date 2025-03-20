@@ -21,7 +21,7 @@ const LearnMore = () => {
               <div key={index} className={styles.lastCardContainer}>
                 {/* Last card with button */}
                 <div className={`${styles.lastCard} relative overflow-hidden `}>
-                  <Globe className="absolute right-[-10%] top-0 w-[500px] h-[500px] scale-125" />
+                  <Globe className="absolute right-[-10%] top-[20%] w-[500px] h-[500px] scale-125" />
                   <span className={`${styles.cardText} py-5 relative z-10`}>
                     {card.title}
                   </span>
