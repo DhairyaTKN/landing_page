@@ -39,20 +39,26 @@ const LearnMore = () => {
               className={cn(
                 styles.cards,
                 index === 0 &&
-                  "relative bg-white dark:bg-black [background-size:40px_40px] [background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)] dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]"
+                "relative bg-white dark:bg-black [background-size:40px_40px] [background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)] dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]"
               )}
               style={
                 index !== 0
                   ? {
-                      backgroundImage: `url(${card.bgImage.src})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }
+                    backgroundImage: `url(${card.bgImage.src})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }
                   : {}
               }
             >
+              {/* Radial Gradient Overlay */}
+              {index === 0 && (
+                <div className="absolute inset-0 flex items-center justify-center bg-white dark:bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+              )}
+
               <span className={styles.cardText}>{card.title}</span>
             </div>
+
           );
         })}
       </div>
