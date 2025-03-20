@@ -17,8 +17,8 @@ type Card = {
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
-  const [selected, setSelected] = useState<Card | null>(null);
-  const [lastSelected, setLastSelected] = useState<Card | null>(null);
+  const [selected] = useState<Card | null>(null);
+  const [lastSelected] = useState<Card | null>(null);
 
   // const handleClick = (card: Card) => {
   //   setLastSelected(selected);

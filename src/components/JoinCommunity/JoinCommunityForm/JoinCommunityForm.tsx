@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button'
 // Form Schema with Validation using Zod
 const formSchema = z.object({
   email: z.string().email("Enter a valid email address"), // Required email
-  referralCode: z.number().optional(), // Optional referral code
+  referralCode: z.string().optional(), 
 });
 
 // Define the types for the form values
@@ -23,7 +23,7 @@ const JoinCommunityForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
-      referralCode: undefined,
+      referralCode: "",
     },
   });
 
@@ -70,16 +70,10 @@ const JoinCommunityForm = () => {
                 <FormControl>
                   <Input
                     {...field}
-                    type="number"
+                    type="text"
                     placeholder="Enter referral code"
                     className={styles.input}
-                    onChange={(e) => {
-                      const value = e.target.value;
-                      // Allow only digits (prevent "+", "-", "/", "e")
-                      if (/^\d*$/.test(value)) {
-                        field.onChange(value ? Number(value) : undefined);
-                      }
-                    }}
+                    onChange={(e) => field.onChange(e.target.value)}
                   />
                 </FormControl>
                 <FormMessage />

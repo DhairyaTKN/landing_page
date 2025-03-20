@@ -69,7 +69,7 @@ const JoinCommunityForm = () => {
                 <FormControl>
                   <Input 
                     {...field} 
-                    type="number" 
+                    type="text" 
                     placeholder="Enter referral code" 
                     className={styles.input}
                   />
