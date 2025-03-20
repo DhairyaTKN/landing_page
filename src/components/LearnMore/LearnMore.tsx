@@ -1,10 +1,11 @@
 'use client'
 import React from "react";
 import { learnMoreStyles as styles } from "./learnMoreStyles.tailwind";
-import Button from "../shared/Button/Button";
+// import Button from "../shared/Button/Button";
 import { learnMoreData } from '@/data/learnMoreData';
 import Globe from "../shared/Globe/Globe";
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 const LearnMore = () => {
   return (

@@ -6,7 +6,8 @@ import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { joinCommunityFormStyles as styles } from './joinCommunityFormStyles.tailwind';
-import Button from '@/components/shared/Button/Button';
+// import Button from '@/components/shared/Button/Button';
+import { Button } from '@/components/ui/button'
 
 // Form Schema with Validation using Zod
 const formSchema = z.object({
@@ -35,10 +36,10 @@ const JoinCommunityForm = () => {
   return (
     <div className={styles.outerContainer}>
       <span className={styles.heading}>Join The TKN Sports Testing Community</span>
-      
+
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className={styles.formContainer}>
-          
+
           {/* Email Input */}
           <FormField
             control={form.control}
@@ -47,10 +48,10 @@ const JoinCommunityForm = () => {
               <FormItem className={styles.formItem} >
                 <FormLabel className={styles.formLabel}>Email</FormLabel>
                 <FormControl>
-                  <Input 
-                    {...field} 
+                  <Input
+                    {...field}
                     // type="email" 
-                    placeholder="Enter your email" 
+                    placeholder="Enter your email"
                     className={styles.input}
                   />
                 </FormControl>
@@ -88,7 +89,7 @@ const JoinCommunityForm = () => {
 
 
           {/* Submit Button */}
-          <Button type="submit" variant='primary' className={styles.submitButton}>
+          <Button variant="primary" className={styles.submitButton} type="submit">
             Join Now
           </Button>
         </form>

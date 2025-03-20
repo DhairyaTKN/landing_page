@@ -6,7 +6,8 @@ import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { joinCommunityFormStyles as styles } from './joinCommunityFormStyles.tailwind';
-import Button from '@/components/shared/Button/Button';
+import { Button } from '@/components/ui/button';
+// import Button from '@/components/shared/Button/Button';
 
 //  Define Form Schema with Validation using Zod
 const formSchema = z.object({

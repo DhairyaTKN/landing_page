@@ -1,9 +1,10 @@
 import React from 'react'
 import { heroSectionStyles as styles } from './heroSectionStyles.tailwind'
-import Button from '@/components/shared/Button/Button'
+// import Button from '@/components/shared/Button/Button'
 import Image from 'next/image'
 import logo from '@/assets/images/TKN Sports Logo 1.png'
 import TimerComponent from './TimerComponent/TimerComponent'
+import { Button } from '@/components/ui/button'
 
 const HeroSection = () => {
   return (

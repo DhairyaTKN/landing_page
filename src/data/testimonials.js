@@ -1,4 +1,3 @@
-import logo from '@/assets/images/TKN Sports Logo 1.png'
 import user1 from '@/assets/images/leo_carter.png'
 import user2 from '@/assets/images/maria.png'
 import user3 from '@/assets/images/user.png'

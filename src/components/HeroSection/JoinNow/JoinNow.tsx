@@ -1,6 +1,7 @@
 import React from 'react'
 import {joinNowStyles as styles } from './joinNowStyles.tailwind'
-import Button from '@/components/shared/Button/Button'
+import { Button } from '@/components/ui/button'
+// import Button from '@/components/shared/Button/Button'
 
 // const heading = `Get Ready to Experience Sports Like Never Before!`;
 const JoinNow = () => {
