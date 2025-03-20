@@ -47,7 +47,7 @@ export function BorderedContainer({
         <MovingBorder duration={duration} rx="30%" ry="30%">
           <div
             className={cn(
-              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--sky-500)_40%,transparent_60%)]",
+              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(circle,#18CCFC_0%,#18CCFC_20%,#6344F5_50%,rgba(174,72,255,0)_100%)]",
               borderClassName
             )}
           />

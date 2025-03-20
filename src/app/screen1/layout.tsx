@@ -8,9 +8,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <div className="container relative z-10">
+      {/* <div className="container relative z-10">
         <Navbar />
-      </div>
+      </div> */}
       {children}
       <div className="container">
       <Footer />
