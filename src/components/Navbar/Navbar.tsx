@@ -7,8 +7,7 @@ const Navbar = () => {
   return (
     <nav className={styles.outerContainer}>
         <div className={styles.imageContainer}>
-            <Image src={Logo} alt='Logo' width={100} height={100}/>
-            
+            <Image src={Logo} alt='Logo' className={styles.logoImage}/>
         </div>
     </nav>
   )

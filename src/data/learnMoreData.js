@@ -1,4 +1,4 @@
-import basketball from '@/assets/images/basketball_image.png'
+import basketball from '@/assets/images/basketball_image.jpg'
 // import sneak_peak from '@/assets/images/sneak_peak.png'
 export const learnMoreData = [
     {

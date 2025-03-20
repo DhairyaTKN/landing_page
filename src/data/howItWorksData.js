@@ -1,7 +1,7 @@
-import Basketball from '@/assets/images/basketball_image.png'
-import gameImage3 from '@/assets/images/game_image3.png'
-import rewards from '@/assets/images/rewards.png'
-import earnings from '@/assets/images/earnings.png'
+import Basketball from '@/assets/images/basketball_image.jpg'
+import gameImage3 from '@/assets/images/game_image3.jpg'
+import rewards from '@/assets/images/rewards.jpg'
+import earnings from '@/assets/images/earnings.jpg'
 export const carouselData = [
   {
     

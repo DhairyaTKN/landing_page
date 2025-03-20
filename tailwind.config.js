@@ -120,7 +120,10 @@ module.exports = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		backgroundImage:{
+			'join-now-gradient': 'linear-gradient(90deg, rgba(24, 204, 252, 0) 0%, #18CCFC 20%, #6344F5 32%, rgba(174, 72, 255, 0) 100%)',
+		}
   	}
   },
   plugins: [

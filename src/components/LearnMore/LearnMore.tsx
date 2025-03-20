@@ -1,16 +1,38 @@
 'use client'
-import React from "react";
+import React, { useRef, useState } from "react";
 import { learnMoreStyles as styles } from "./learnMoreStyles.tailwind";
 import Button from "../shared/Button/Button";
 import { learnMoreData } from '@/data/learnMoreData';
 import Globe from "../shared/Globe/Globe";
 import { cn } from "@/lib/utils";
+import { useInView , motion } from "framer-motion";
 
 const LearnMore = () => {
+  const [hasAnimated, setHasAnimated] = useState(false);  // State to track animation trigger
+  const ref = useRef(null);  // Create a reference to track the element
+
+  const isInView = useInView(ref, { once: false });  // Detect when the element is in view
+
+  // Update the state to trigger the animation when the element is in view
+  if (isInView && !hasAnimated) {
+    setHasAnimated(true);  // Trigger the animation only once
+  }
+
   return (
     <div className={`${styles.wrapper}`}>
       {/* Heading */}
-      <span className={styles.heading}>Want To Learn More</span>
+      <motion.span
+        ref={ref}  // Attach the ref to the motion element
+        className={styles.heading}
+        initial={{ opacity: 0, y: 50 }}  // Start position (invisible and 50px down)
+        animate={{ opacity: hasAnimated ? 1 : 0, y: hasAnimated ? 0 : 50 }}  // Animate on scroll into view
+        transition={{
+          duration: 1,  // Duration of the animation
+          ease: 'easeInOut',  // Smooth easing
+        }}
+      >
+        Want To Learn More
+      </motion.span>
 
       {/* Card Container */}
       <div className={styles.cardContainer}>

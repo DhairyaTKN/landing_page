@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import Button from "../shared/Button/Button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import NFT from '@/assets/svgs/NFT.svg'
 import Lock from '@/assets/svgs/Lock.svg'
 import Airdrops from '@/assets/svgs/airDrops.svg'
 import Image from "next/image";
+import { useInView, motion } from "framer-motion";
+import { whyJoinNowstyles as styles } from './whyJoinNowstyles.tailwind';
 
 const cards = [
   {
@@ -27,14 +29,33 @@ const cards = [
 ];
 
 const WhyJoinNow = () => {
+  const [hasAnimated, setHasAnimated] = useState(false);  // State to track animation trigger
+  const ref = useRef(null);  // Create a reference to track the element
+
+  const isInView = useInView(ref, { once: false });  // Detect when the element is in view
+
+  // Update the state to trigger the animation when the element is in view
+  if (isInView && !hasAnimated) {
+    setHasAnimated(true);  // Trigger the animation only once
+  }
+
   return (
     <div className="pt-[8rem]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Section: Heading, Text, Button */}
         <div className="flex flex-col justify-center space-y-4">
-          <h2 className="font-[family-name:var(--font-bruno)] text-[30px] gradient-text">
+          <motion.span
+            ref={ref}  // Attach the ref to the motion element
+            className={styles.heading}
+            initial={{ opacity: 0, y: 50 }}  // Start position (invisible and 50px down)
+            animate={{ opacity: hasAnimated ? 1 : 0, y: hasAnimated ? 0 : 50 }}  // Animate on scroll into view
+            transition={{
+              duration: 1,  // Duration of the animation
+              ease: 'easeInOut',  // Smooth easing
+            }}
+          >
             Why Join Now?
-          </h2>
+          </motion.span>
           <p className="font-[300]">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
