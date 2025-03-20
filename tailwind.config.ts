@@ -1,5 +1,6 @@
 // import defaultTheme from "tailwindcss/defaultTheme";
 // import colors from "tailwindcss/colors";
+// @ts-expect-error Tailwind does not provide proper TypeScript definitions
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
  
 /** @type {import('tailwindcss').Config} */
