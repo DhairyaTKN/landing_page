@@ -5,7 +5,7 @@ export const featuresData = [
       <>
         <h3 className="text-white text-lg font-bold">High-level vision of TKN Sports</h3>
         <p className="text-gray-400 text-sm">
-          A robust solution that fits perfectly into our workflow. It has enhanced our team's capabilities and allowed us to tackle more complex projects.
+          A robust solution that fits perfectly into our workflow. It has enhanced our team&apos;s capabilities and allowed us to tackle more complex projects.
         </p>
       </>
     ),
@@ -19,7 +19,7 @@ export const featuresData = [
       <>
         <h3 className="text-white text-lg font-bold">Basic tokenomics overview</h3>
         <p className="text-gray-400 text-sm">
-          A robust solution that fits perfectly into our workflow. It has enhanced our team's capabilities and allowed us to tackle more complex projects.
+          A robust solution that fits perfectly into our workflow. It has enhanced our team&apos;s capabilities and allowed us to tackle more complex projects.
         </p>
       </>
     ),
@@ -33,7 +33,7 @@ export const featuresData = [
       <>
         <h3 className="text-white text-lg font-bold">Sneak peek at future features</h3>
         <p className="text-gray-400 text-sm">
-          A robust solution that fits perfectly into our workflow. It has enhanced our team's capabilities and allowed us to tackle more complex projects.
+          A robust solution that fits perfectly into our workflow. It has enhanced our team&apos;s capabilities and allowed us to tackle more complex projects.
         </p>
       </>
     ),

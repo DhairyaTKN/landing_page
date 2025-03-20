@@ -126,7 +126,7 @@ export const TracingBeam = ({
             filter="drop-shadow(0 0 8px rgba(99, 68, 245, 0.5))"
             style={{
               offsetPath: `path("M ${svgWidth - 20} 20 L 20 20 L 20 ${svgHeight - 20} L ${svgWidth - 20} ${svgHeight - 20}")`,
-              offdistance: useTransform(smoothPathProgress, [0, 1], ['0%', '100%'])
+              offsetDistance: useTransform(smoothPathProgress, [0, 1], ['0%', '100%'])
             }}
           />
          

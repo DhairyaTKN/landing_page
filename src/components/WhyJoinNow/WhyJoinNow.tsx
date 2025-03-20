@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import Button from "../shared/Button/Button";
+// import Button from "../shared/Button/Button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import NFT from '@/assets/svgs/NFT.svg'
 import Lock from '@/assets/svgs/Lock.svg'
 import Airdrops from '@/assets/svgs/airDrops.svg'
 import Image from "next/image";
+import { Button } from "../ui/button";
 import { useInView, motion } from "framer-motion";
 import { whyJoinNowstyles as styles } from './whyJoinNowstyles.tailwind';
 

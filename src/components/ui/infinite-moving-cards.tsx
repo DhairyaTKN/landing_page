@@ -23,10 +23,8 @@ export const InfiniteMovingCards = ({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
-    addAnimation();
-  }, []);
   const [start, setStart] = useState(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -69,6 +67,10 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+  
+  useEffect(() => {
+    addAnimation();
+  }, [addAnimation]);
   return (
     <div
       ref={containerRef}
@@ -92,7 +94,7 @@ export const InfiniteMovingCards = ({
             //   background:
             //     "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
             // }}
-            key={item.name}
+            key={idx}
           >
             <blockquote>
               <div

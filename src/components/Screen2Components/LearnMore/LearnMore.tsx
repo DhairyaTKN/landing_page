@@ -1,7 +1,8 @@
 import React from 'react'
 import { learnMoreStyles as styles } from './learnMoreStyles.tailwind'
-import Button from '@/components/shared/Button/Button'
+// import Button from '@/components/shared/Button/Button'
 import Features from './Features/Features'
+import { Button } from '@/components/ui/button'
 
 const LearnMore = () => {
   return (

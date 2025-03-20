@@ -12,13 +12,14 @@ import WhyJoinNow from "@/components/WhyJoinNow/WhyJoinNow";
 export default function Home() {
   return (
     <>
-    <div className="relative">
+    <div className=" relative ">
       <div className="relative z-10 container">
-        <Navbar />
-      </div>
-       <HeroSection />
 
+      <Navbar/>
+      </div>
+    <HeroSection />
     </div>
+      
     <div className="flex flex-col container ">
       {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum vero reiciendis consequuntur fugit recusandae dolores veritatis maiores sequi, et atque eligendi! Accusamus, facere pariatur similique velit dolorem quo earum reprehenderit.
       <span className="font-[family-name:var(--font-bruno)]">Lorem ipsum dolor sit amet consectetur adipisicing.</span> */}

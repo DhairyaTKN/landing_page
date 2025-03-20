@@ -1,10 +1,11 @@
 'use client'
 import React, { useRef, useState } from "react";
 import { learnMoreStyles as styles } from "./learnMoreStyles.tailwind";
-import Button from "../shared/Button/Button";
+// import Button from "../shared/Button/Button";
 import { learnMoreData } from '@/data/learnMoreData';
 import Globe from "../shared/Globe/Globe";
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 import { useInView , motion } from "framer-motion";
 
 const LearnMore = () => {
@@ -42,7 +43,7 @@ const LearnMore = () => {
               <div key={index} className={styles.lastCardContainer}>
                 {/* Last card with button */}
                 <div className={`${styles.lastCard} relative overflow-hidden `}>
-                  <Globe className="absolute right-[-10%] top-0 w-[500px] h-[500px] scale-125" />
+                  <Globe className="absolute right-[-10%] top-[20%] w-[500px] h-[500px] scale-125" />
                   <span className={`${styles.cardText} py-5 relative z-10`}>
                     {card.title}
                   </span>

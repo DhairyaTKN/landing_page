@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';  // Import useInView and motion
 import { joinNowStyles as styles } from './joinNowStyles.tailwind';
-import Button from '@/components/shared/Button/Button';
+import { Button } from '@/components/ui/button'
+// import Button from '@/components/shared/Button/Button';
 
 const JoinNow = () => {
   const [hasAnimated, setHasAnimated] = useState(false);  // State to track animation trigger

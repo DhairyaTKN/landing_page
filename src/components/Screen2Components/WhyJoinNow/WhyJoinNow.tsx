@@ -1,9 +1,10 @@
 'use client'
 import React from 'react'
 import { whyJoinNowStyles as styles } from './whyJoinNowStyles.tailwind'
-import Button from '@/components/shared/Button/Button'
+// import Button from '@/components/shared/Button/Button'
 import { HoverEffect } from '@/components/ui/card-hover-effect'
 import  {whyJoinData}  from '@/data/perksData'
+import { Button } from '@/components/ui/button'
 
 const WhyJoinNow = () => {
   return (
