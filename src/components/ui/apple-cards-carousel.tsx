@@ -13,7 +13,7 @@ import {
 } from "@tabler/icons-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useInView } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { StaticImageData } from "next/image";
@@ -44,6 +44,17 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [hasAnimated, setHasAnimated] = useState(false);  // State to track animation trigger
+  const ref = useRef(null);  // Create a reference to track the element
+
+  const isInView = useInView(ref, { once: false });  // Detect when the element is in view
+
+  // Update the state to trigger the animation when the element is in view
+  if (isInView && !hasAnimated) {
+    setHasAnimated(true);  // Trigger the animation only once
+  }
+
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -129,19 +140,20 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           >
             {items.map((item, index) => (
               <motion.div
+                ref={ref} 
                 initial={{
                   opacity: 0,
                   y: 20,
                 }}
                 animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
+                  opacity: hasAnimated ? 1 : 0,
+                  y: hasAnimated ? 0 : 20,
+                  transition: hasAnimated ?  {
                     duration: 0.5,
                     delay: 0.2 * index,
                     ease: "easeOut",
                     once: true,
-                  },
+                  }: {},
                 }}
                 key={"card" + index}
                 className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"

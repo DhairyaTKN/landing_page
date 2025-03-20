@@ -1,7 +1,7 @@
 import React from 'react'
 import { joinCommunityStyles as styles } from './joinCommunityStyles.tailwind'
 import JoinCommunityForm from './JoinCommunityForm/JoinCommunityForm'
-import joinCommunityImage from '@/assets/images/join_community.png'
+import joinCommunityImage from '@/assets/images/leaderboard.png'
 import card from '@/assets/images/card.png'
 import Image from 'next/image'
 import { ContainerScroll } from '@/components/ui/container-scroll-animation'

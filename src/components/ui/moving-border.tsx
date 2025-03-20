@@ -11,7 +11,7 @@ import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
 export function BorderedContainer({
-  borderRadius = "1.75rem",
+  borderRadius = "12px",
   children,
   as: Component = "button",
   containerClassName,
@@ -41,8 +41,8 @@ export function BorderedContainer({
       {...otherProps}
     >
       <div
-        className="absolute inset-0"
-        style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
+        className="absolute inset-0 !rounded-tr-[0px] !rounded-br-[0px]"
+        style={{ borderRadius: `14px` }}
       >
         <MovingBorder duration={duration} rx="30%" ry="30%">
           <div
@@ -56,11 +56,11 @@ export function BorderedContainer({
 
       <div
         className={cn(
-          "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased",
+          "relative bg-slate-900/[0.8] border !rounded-tr-[0px] !rounded-br-[0px] border-slate-800 backdrop-blur-xl text-white flex items-center p-[10px] pr-0 justify-center w-full h-full text-sm antialiased",
           className
         )}
         style={{
-          borderRadius: `calc(${borderRadius} * 0.96)`,
+          borderRadius: `14px`,
         }}
       >
         {children}

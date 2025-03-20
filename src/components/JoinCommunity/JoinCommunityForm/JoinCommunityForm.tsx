@@ -1,13 +1,14 @@
-'use client'
-import React from 'react';
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod"; //to connect react-hook-form with zod (zod being used for validation)
-import * as z from "zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { joinCommunityFormStyles as styles } from './joinCommunityFormStyles.tailwind';
-// import Button from '@/components/shared/Button/Button';
+  'use client'
+  import React, { useRef, useState } from 'react';
+  import { useForm } from "react-hook-form";
+  import { zodResolver } from "@hookform/resolvers/zod"; //to connect react-hook-form with zod (zod being used for validation)
+  import * as z from "zod";
+  import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+  import { Input } from "@/components/ui/input";
+  import { joinCommunityFormStyles as styles } from './joinCommunityFormStyles.tailwind';
+//   import Button from '@/components/shared/Button/Button';
 import { Button } from '@/components/ui/button'
+import { useInView , motion } from 'framer-motion';
 
 // Form Schema with Validation using Zod
 const formSchema = z.object({
@@ -15,8 +16,8 @@ const formSchema = z.object({
   referralCode: z.string().optional(), 
 });
 
-// Define the types for the form values
-type FormValues = z.infer<typeof formSchema>;
+  // Define the types for the form values
+  type FormValues = z.infer<typeof formSchema>;
 
 const JoinCommunityForm = () => {
   const form = useForm<FormValues>({
@@ -27,38 +28,58 @@ const JoinCommunityForm = () => {
     },
   });
 
-  // Handle Form Submission
-  const onSubmit = (data: FormValues) => {
-    console.log("Form Submitted:", data);
-    // Add your form submission logic here (API calls, etc.)
-  };
+    // Handle Form Submission
+    const onSubmit = (data: FormValues) => {
+      console.log("Form Submitted:", data);
+      // Add your form submission logic here (API calls, etc.)
+    };
+    const [hasAnimated, setHasAnimated] = useState(false);  // State to track animation trigger
+    const ref = useRef(null);  // Create a reference to track the element
 
-  return (
-    <div className={styles.outerContainer}>
-      <span className={styles.heading}>Join The TKN Sports Testing Community</span>
+    const isInView = useInView(ref, { once: false });  // Detect when the element is in view
 
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className={styles.formContainer}>
+    // Update the state to trigger the animation when the element is in view
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);  // Trigger the animation only once
+    }
 
-          {/* Email Input */}
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem className={styles.formItem} >
-                <FormLabel className={styles.formLabel}>Email</FormLabel>
-                <FormControl>
-                  <Input
-                    {...field}
-                    // type="email" 
-                    placeholder="Enter your email"
-                    className={styles.input}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+    return (
+      <div className={styles.outerContainer}>
+        <motion.span
+          ref={ref}  // Attach the ref to the motion element
+          className={styles.heading}
+          initial={{ opacity: 0, y: 50 }}  // Start position (invisible and 50px down)
+          animate={{ opacity: hasAnimated ? 1 : 0, y: hasAnimated ? 0 : 50 }}  // Animate on scroll into view
+          transition={{
+            duration: 1,  // Duration of the animation
+            ease: 'easeInOut',  // Smooth easing
+          }}
+        >
+          Join The TKN Sports Testing Community
+        </motion.span>
+        
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className={styles.formContainer}>
+            
+            {/* Email Input */}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className={styles.formItem} >
+                  <FormLabel className={styles.formLabel}>Email</FormLabel>
+                  <FormControl>
+                    <Input 
+                      {...field} 
+                      // type="email" 
+                      placeholder="Enter your email" 
+                      className={styles.input}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
           {/* Referral Code Input (Optional) */}
           <FormField
@@ -92,4 +113,4 @@ const JoinCommunityForm = () => {
   );
 };
 
-export default JoinCommunityForm;
+  export default JoinCommunityForm;
