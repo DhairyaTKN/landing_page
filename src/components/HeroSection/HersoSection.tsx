@@ -20,13 +20,13 @@ const HeroSection = () => {
           Your browser does not support the video tag.
         </video>
         {/* Optional overlay to make content more readable */}
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-black/75 z-10"></div>
       </div>
       
       {/* Content container (positioned above video) */}
-      <div className="relative z-20 w-full flex flex-col gap-[50px] pt-11 container">
+      <div className="relative z-20 w-full flex flex-col gap-[50px] pb-[240px] container">
         {/* timer section */}
-        <div className='ml-auto pt-2'>
+        <div className='ml-auto pt-2 mr-[65px]'>
           {/* Timer Component */}
           <CountdownTimer />
         </div>
