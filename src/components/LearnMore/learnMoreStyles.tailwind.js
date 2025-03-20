@@ -8,6 +8,6 @@ export const learnMoreStyles = {
     cardText: `font-[family-name:var(--font-bruno)] grandient-text relative z-20`,
     button: `w-full`,
     cards: ` min-h-[340px] min-w-[full] md:min-w-[460px] flex items-start justify-start 
-                border border-borderColor rounded-[10px] text-gray-300 p-5 `,
+                border border-borderColor rounded-[10px] text-gray-300 p-5 relative overflow-hidden `,
 
 }
