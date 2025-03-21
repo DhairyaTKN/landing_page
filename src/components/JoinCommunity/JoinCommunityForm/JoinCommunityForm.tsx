@@ -7,8 +7,9 @@
   import { Input } from "@/components/ui/input";
   import { joinCommunityFormStyles as styles } from './joinCommunityFormStyles.tailwind';
 //   import Button from '@/components/shared/Button/Button';
-import { Button } from '@/components/ui/button'
+// import { Button } from '@/components/ui/button'
 import { useInView , motion } from 'framer-motion';
+import { HoverBorderGradientButton } from '@/components/shared/Button/HoverEffectButton';
 
 // Form Schema with Validation using Zod
 const formSchema = z.object({
@@ -57,7 +58,10 @@ const JoinCommunityForm = () => {
         >
           Join The TKN Sports Testing Community
         </motion.span>
-        
+        <p className="text-[16px] gradient-text max-w-[80%]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className={styles.formContainer}>
             
@@ -104,9 +108,10 @@ const JoinCommunityForm = () => {
 
 
           {/* Submit Button */}
-          <Button variant="primary" className={styles.submitButton} type="submit">
+          {/* <Button variant="primary" className={styles.submitButton} type="submit">
             Join Now
-          </Button>
+          </Button> */}
+          <HoverBorderGradientButton containerClassName={styles.submitButton} className='w-full'>Join Now</HoverBorderGradientButton>
         </form>
       </Form>
     </div>

@@ -1,6 +1,6 @@
 import { Boxes } from "@/components/ui/background-boxes";
 import React from "react";
-import earn_rewards from '@/assets/images/earn_rewards.jpg'
+import earn_rewards from '@/assets/images/earn_rewards.png'
 import social_engagement from '@/assets/images/social_engagement.png'
 import cube from '@/assets/images/cube.png'
 
