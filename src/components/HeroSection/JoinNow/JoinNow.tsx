@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';  // Import useInView and motion
 import { joinNowStyles as styles } from './joinNowStyles.tailwind';
-import { Button } from '@/components/ui/button'
+// import { Button } from '@/components/ui/button'
 import { HoverBorderGradientButton } from '@/components/shared/Button/HoverEffectButton';
 // import Button from '@/components/shared/Button/Button';
 
