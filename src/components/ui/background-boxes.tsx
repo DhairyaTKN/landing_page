@@ -21,6 +21,25 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
+  const highlightedPositions = [
+    { i: 10, j: 13, color: "#f9a8d4" },
+    { i: 10, j: 14, color: "#f9a8d4" },
+    { i: 10, j: 15, color: "#f9a8d4" },
+    { i: 10, j: 16, color: "#d8b4fe" },
+    { i: 10, j: 17, color: "#d8b4fe" },
+    { i: 14, j: 18, color: "#a5b4fc" },
+    { i: 15, j: 18, color: "#a5b4fc" },
+    { i: 16, j: 18, color: "#c4b5fd" },
+    { i: 17, j: 18, color: "#c4b5fd" },
+    { i: 6, j: 14, color: "#fde047" },
+    { i: 12, j: 18, color: "#fde047" },
+    { i: 20, j: 7, color: "#fde047" },
+  ]; // Replace this with the indices you want to highlight
+
+  const isHighlighted = (i: number, j: number) => {
+    return highlightedPositions.find(pos => pos.i === i && pos.j === j);
+  };
+
   return (
     <div
       style={{
@@ -40,15 +59,15 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
           {cols.map((_, j) => (
             <motion.div
               whileHover={{
-                backgroundColor: i === 14 ? "#f9a8d4" : `${getRandomColor()}`,
+                backgroundColor: isHighlighted(i, j) ? isHighlighted(i, j)?.color : `${getRandomColor()}`,
                 transition: { duration: 0 },
               }}
               animate={{
-                backgroundColor: i === 14 ? "#f9a8d4" : "", // Apply the color when i === 14
+                backgroundColor: isHighlighted(i, j) ? isHighlighted(i, j)?.color : "", // Apply the color when i === 14
                 transition: { duration: 2 },
               }}
               style={{
-                backgroundColor: i === 14 ? "#f9a8d4 !important" : "",
+                backgroundColor: isHighlighted(i, j) ? `${isHighlighted(i, j)?.color} !important` : "",
               }}
               key={`col` + j}
               className="relative h-8 w-16 border-t border-r border-slate-700"
