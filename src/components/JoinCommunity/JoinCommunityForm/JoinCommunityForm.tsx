@@ -57,7 +57,10 @@ const JoinCommunityForm = () => {
         >
           Join The TKN Sports Testing Community
         </motion.span>
-        
+        <p className="text-[16px] gradient-text max-w-[80%]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className={styles.formContainer}>
             
