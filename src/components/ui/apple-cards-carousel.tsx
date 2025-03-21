@@ -55,7 +55,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     setHasAnimated(true);  // Trigger the animation only once
   }
 
-
   useEffect(() => {
     if (carouselRef.current) {
       carouselRef.current.scrollLeft = initialScroll;
@@ -133,6 +132,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           ></div>
 
           <div
+            ref={ref} 
             className={cn(
               "flex flex-row justify-start gap-4 pl-4",
               "max-w-7xl " // remove max-w-4xl if you want the carousel to span the full width of its container
@@ -140,7 +140,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           >
             {items.map((item, index) => (
               <motion.div
-                ref={ref} 
                 initial={{
                   opacity: 0,
                   y: 20,
@@ -152,7 +151,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     duration: 0.5,
                     delay: 0.2 * index,
                     ease: "easeOut",
-                    once: true,
+                    once: false,
                   }: {},
                 }}
                 key={"card" + index}
