@@ -7,9 +7,10 @@ import NFT from '@/assets/svgs/NFT.svg'
 import Lock from '@/assets/svgs/Lock.svg'
 import Airdrops from '@/assets/svgs/airDrops.svg'
 import Image from "next/image";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 import { useInView, motion } from "framer-motion";
 import { whyJoinNowstyles as styles } from './whyJoinNowstyles.tailwind';
+import { HoverBorderGradientButton } from "../shared/Button/HoverEffectButton";
 
 const cards = [
   {
@@ -60,9 +61,10 @@ const WhyJoinNow = () => {
           <p className="font-[300]">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
-          <Button variant="primary" className="max-w-[250px]">
+          {/* <Button variant="primary" className="max-w-[250px]">
             Get Started
-          </Button>
+          </Button> */}
+          <HoverBorderGradientButton containerClassName="min-w-[250px]" className="min-w-[250px]">Get Started</HoverBorderGradientButton>
         </div>
 
         {/* Right Section: First Card (Mapped Separately) */}

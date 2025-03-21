@@ -10,7 +10,7 @@ const CommunityEngagement = () => {
     <div className={styles.wrapper}>
         <span className={styles.heading}>Join the Conversation</span>
         <div className='flex gap-4 justify-center items-center'>
-            <FloatingDock items={socialMediaLinksData} mobileClassName="translate-y-20" />
+            <FloatingDock items={socialMediaLinksData} mobileClassName="translate-y-20" desktopClassName='dark:bg-transparent'/>
         </div>
         <ParallaxScrollDemo />
 

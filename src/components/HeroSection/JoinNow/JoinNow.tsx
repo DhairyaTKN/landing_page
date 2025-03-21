@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';  // Import useInView and motion
 import { joinNowStyles as styles } from './joinNowStyles.tailwind';
 import { Button } from '@/components/ui/button'
+import { HoverBorderGradientButton } from '@/components/shared/Button/HoverEffectButton';
 // import Button from '@/components/shared/Button/Button';
 
 const JoinNow = () => {
@@ -37,9 +38,10 @@ const JoinNow = () => {
       </span>
 
       {/* Button */}
-      <Button variant="primary" className={styles.button}>
+      {/* <Button variant="primary" className={styles.button}>
         Join Now
-      </Button>
+      </Button> */}
+      <HoverBorderGradientButton>Join Now</HoverBorderGradientButton>
     </div>
   );
 };

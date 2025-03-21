@@ -68,13 +68,13 @@ export const FollowPointer = ({
   title?: string | React.ReactNode;
 }) => {
   const colors = [
-    "#0ea5e9",
-    "#737373",
-    "#14b8a6",
-    "#22c55e",
-    "#3b82f6",
-    "#ef4444",
-    "#eab308",
+    "#405372",
+    // "#737373",
+    // "#14b8a6",
+    // "#22c55e",
+    // "#3b82f6",
+    // "#ef4444",
+    // "#eab308",
   ];
   return (
     <motion.div
@@ -98,11 +98,11 @@ export const FollowPointer = ({
       }}
     >
       <svg
-        stroke="currentColor"
-        fill="currentColor"
+        stroke="#405372"
+        fill="#405372"
         strokeWidth="1"
         viewBox="0 0 16 16"
-        className="h-6 w-6 -translate-x-[12px] -translate-y-[10px] -rotate-[70deg] transform stroke-sky-600 text-sky-500"
+        className="h-6 w-6 -translate-x-[12px] -translate-y-[10px] -rotate-[70deg] transform stroke-[#405372] text-sky-500"
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"

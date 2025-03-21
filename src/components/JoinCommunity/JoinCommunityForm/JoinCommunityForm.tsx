@@ -7,8 +7,9 @@
   import { Input } from "@/components/ui/input";
   import { joinCommunityFormStyles as styles } from './joinCommunityFormStyles.tailwind';
 //   import Button from '@/components/shared/Button/Button';
-import { Button } from '@/components/ui/button'
+// import { Button } from '@/components/ui/button'
 import { useInView , motion } from 'framer-motion';
+import { HoverBorderGradientButton } from '@/components/shared/Button/HoverEffectButton';
 
 // Form Schema with Validation using Zod
 const formSchema = z.object({
@@ -104,9 +105,10 @@ const JoinCommunityForm = () => {
 
 
           {/* Submit Button */}
-          <Button variant="primary" className={styles.submitButton} type="submit">
+          {/* <Button variant="primary" className={styles.submitButton} type="submit">
             Join Now
-          </Button>
+          </Button> */}
+          <HoverBorderGradientButton containerClassName={styles.submitButton} className='w-full'>Join Now</HoverBorderGradientButton>
         </form>
       </Form>
     </div>
